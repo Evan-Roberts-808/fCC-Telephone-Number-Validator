@@ -14,13 +14,16 @@ const validatePhoneNumber = () => {
   const match = pattern.test(phoneNumber);
 
   if (match) {
-    results.innerHTML = `<p>Valid US number: ${phoneNumber}</p>`;
+    results.classList.remove("hidden")
+    results.innerHTML = `<p id="result">Valid US number: ${phoneNumber}</p>`;
   } else {
-    results.innerHTML = `<p>Invalid US number: ${phoneNumber}</p>`;
+    results.classList.remove("hidden")
+    results.innerHTML = `<p id="result">Invalid US number: ${phoneNumber}</p>`;
   }
 };
 
 const clearResults = () => {
+  results.classList.add("hidden")
   results.innerHTML = ``
 }
 
